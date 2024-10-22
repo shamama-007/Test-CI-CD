@@ -8,7 +8,8 @@ app.get('/', (req, res) => {
         status: true,
         message: "welcome to CI/CD",
         update: "update",
-        error: null
+        error: null,
+        error: true
     })
 })
 
