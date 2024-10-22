@@ -6,7 +6,8 @@ app.get('/', (req, res) => {
     res.json({
         status: true,
         message: "welcome to CI/CD",
-        update: "update"
+        update: "update",
+        error: null
     })
 })
 
