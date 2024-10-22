@@ -5,7 +5,8 @@ const port = 5000
 app.get('/', (req, res) => {
     res.json({
         status: true,
-        message: "welcome to CI/CD"
+        message: "welcome to CI/CD",
+        update: "update"
     })
 })
 
