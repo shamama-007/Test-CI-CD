@@ -2,6 +2,10 @@ name: Node.js CI
 
 on:
   push:
+    paths-ignore:
+      - /uploads/
+      - /api/
+      - .env
     branches: [ master ]
   pull_request:
     branches: [ master ]
