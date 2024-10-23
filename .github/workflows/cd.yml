@@ -1,23 +1,20 @@
-name: Node.js CI
+name: CI/CD Pipeline NextJS 14
 
 on:
   push:
-    paths-ignore:
-      - 'uploads/**'
-      - 'api/**'
-      - '.env'
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-  build:
-    runs-on: self-hosted
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{matrix.node-version}}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{matrix.node-version}}
-    - run: npm i
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          # host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          # key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /var/www/test
+            git pull origin master
