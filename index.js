@@ -6,8 +6,8 @@ const port = process.env.PORT || 5000
 app.get('/', (req, res) => {
     res.json({
         status: true,
-        message: "welcome to CI/CD",
-        error: null,
+        message: "welcome to new CI/CD",
+        update: "CI/CD",
     })
 })
 

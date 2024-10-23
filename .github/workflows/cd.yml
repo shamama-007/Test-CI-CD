@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           script: |
-            cd /var/www/test
+            cd /var/www/test/Test-CI-CD/
             git pull origin master
-            npm update
-            npm run dev
+            npm install
+            npm start
