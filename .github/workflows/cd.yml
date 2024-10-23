@@ -12,9 +12,9 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@v0.1.5
         with:
-          host: ${{ secrets.HOST }}
-          username: ubuntu
-          key: ${{ secrets.KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SECRET_KEY }}
           script: |
             cd /var/www/test
             git pull origin master
