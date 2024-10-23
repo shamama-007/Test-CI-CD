@@ -1,5 +1,4 @@
-name: CI/CD Pipeline NextJS 14
-
+name: CI/CD Pipeline Test
 on:
   push:
     branches: [master]
@@ -19,4 +18,4 @@ jobs:
             cd /var/www/test/Test-CI-CD/
             git pull origin master
             npm install
-            npm start
+            pm2 restart all || pm2 start npm --name "cicd" -- start
