@@ -16,4 +16,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           script: |
-            echo "welcome to china"
+            cd /var/www/test
+            git pull origin master
+            npm update
+            npm run dev
